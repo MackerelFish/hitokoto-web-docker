@@ -20,16 +20,7 @@
 ## 使用方法
 
 1. docker pull mackerelfish/hitokoto-web:latest
-2. docker run -d \\
-
--p 11451:11451 \\
-
---name hitokoto-web \\
-
---restart=always \\
-
-mackerelfish/hitokoto-web:latest
-
+2. docker run -d -p 11451:11451 --name hitokoto-web --restart=always mackerelfish/hitokoto-web:latest
 3. 使用接口为 http://yourhost:yourport/HITOKOTO ，获取一条随机一言
 
 返回值示例
