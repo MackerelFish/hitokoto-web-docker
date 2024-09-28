@@ -20,16 +20,16 @@
 ## 使用方法
 
 1.拉取docker镜像
-```json
+```
 docker pull mackerelfish/hitokoto-web:latest
 ```
 2.启动docker容器
-```json
+```
 docker run -d \
 -p <yourport>:<yourport> \
 --name hitokoto-web \
 --restart=always \
-hitokoto-web:latest
+mackerelfish/hitokoto-web:latest
 ```
 3. 使用接口为 http://<yourhost>:<yourport>/HITOKOTO ，获取一条随机一言
 
