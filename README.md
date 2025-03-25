@@ -23,15 +23,35 @@
 ```
 docker pull mackerelfish/hitokoto-web:latest
 ```
+国内用户连不上官方docker源可使用腾讯云镜像仓库下载并添加镜像别名
+```
+docker pull ccr.ccs.tencentyun.com/mackerel/wows:hitokoto
+docker tag ccr.ccs.tencentyun.com/mackerel/wows:hitokoto mackerelfish/hitokoto-web:latest
+```
 2.启动docker容器
 ```
 docker run -d \
--p <yourport>:<yourport> \
+-p 11451:11451 \
 --name hitokoto-web \
 --restart=always \
 mackerelfish/hitokoto-web:latest
 ```
-3. 使用接口为 http://<yourhost>:<yourport>/HITOKOTO ，获取一条随机一言
+3. 使用接口为 http://host:11451/HITOKOTO ，替换host为宿主机内网ip地址，获取一条随机一言
+
+## 调用方法
+`GET`
+## 参数说明
+参数名|类型|含义
+-|-|-
+data|string|获取你想要的数据格式
+空or未匹配参数|null|默认返回 JSON 格式数据
+
+### 数据格式说明
+参数值|含义
+-|-
+json|返回 JSON 格式数据
+text|返回纯文字一言
+空or未匹配参数|默认返回 JSON 格式数据
 
 返回值示例
 ```json
